@@ -6,29 +6,11 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:26:56 by cperron           #+#    #+#             */
-/*   Updated: 2022/11/09 14:09:10 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:39:21 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-int	ft_unsint(unsigned int n)
-{
-	int	i;
-
-	i = 0;
-	if (n >= 10)
-	{
-		i += ft_unsint(n / 10);
-		i += ft_unsint(n % 10);
-	}
-	else
-	{
-		write(1, &"0123456789"[n % 10], 1);
-		i++;
-	}
-	return (i);
-}
 
 int	ft_pourcen(void)
 {

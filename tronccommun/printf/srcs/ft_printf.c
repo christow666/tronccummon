@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:01:14 by cperron           #+#    #+#             */
-/*   Updated: 2022/11/09 14:14:22 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:27:07 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ int	ft_checkformat(va_list args, const char format)
 		return (ft_pourcen());
 	if (format == 'u')
 		return (ft_unsint(va_arg(args, unsigned int)));
+	if (format == 'x')
+		return (ft_putnbr_hex(va_arg(args, unsigned int)));
+	if (format == 'X')
+		return (ft_putnbr_hexx(va_arg(args, unsigned int)));
+	if (format == 'p')
+		return (ft_pointer(va_arg(args, unsigned long long)));
 	return (0);
 }
 

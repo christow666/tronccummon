@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:38:08 by cperron           #+#    #+#             */
-/*   Updated: 2022/11/08 21:39:58 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:39:36 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	main(void)
 {
-	char *s2 = "abcqrstuvwxyzabc";
-
-	printf("%d\n", printf("%f", 0.1));
-	printf("%d", ft_printf("%d", 0.1));
+	printf("%d\n", printf(" %p ", (void *)-1));
+	printf("%d", ft_printf(" %p ", (void *) -1));
 	return (0);
 }

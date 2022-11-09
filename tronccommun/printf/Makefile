@@ -1,7 +1,8 @@
 NAME = libftprintf.a
 
 SRCS =  ./srcs/ft_printf.c\
-		./srcs/ft_format.c
+		./srcs/ft_format.c\
+		./srcs/ft_format2.c
 
 LIBFT_A = ./libft/libft.a
 

@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:04:16 by cperron           #+#    #+#             */
-/*   Updated: 2022/11/09 14:01:08 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:27:41 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ int	ft_base10(int n);
 int	ft_pourcen(void);
 int	ft_decimal(double n);
 int	ft_unsint(unsigned int n);
+int	ft_putnbr_hex(unsigned long long n);
+int	ft_putnbr_hexx(unsigned int n);
+int	ft_pointer(unsigned long long n);
 
 #endif
