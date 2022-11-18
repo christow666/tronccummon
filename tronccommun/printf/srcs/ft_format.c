@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:26:56 by cperron           #+#    #+#             */
-/*   Updated: 2022/11/09 15:39:21 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/09 16:03:26 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,3 @@ int	ft_base10(int n)
 	ft_putnbr_fd(n, 1);
 	return (ft_nbrlen(n));
 }
-
-/*int main()
-{
-	char *s;
-
-	s = "Mussum Ipsum,  per gatis num morreus";
-	printf("%d", ft_str(s));
-}*/

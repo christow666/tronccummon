@@ -6,13 +6,13 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:01:14 by cperron           #+#    #+#             */
-/*   Updated: 2022/11/09 15:27:07 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/09 16:09:01 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_checkformat(va_list args, const char format)
+static int	ft_checkformat(va_list args, const char format)
 {
 	if (format == 'c')
 		return (ft_char(va_arg(args, int)));
@@ -59,10 +59,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-/*int	main(void)
-{
-	printf("%d\n", printf("%s\n", "waispouper"));
-	printf("%d\n", ft_printf("%s\n", "waispouper"));
-	return (0);
-}*/

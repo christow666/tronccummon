@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 20:00:23 by cperron           #+#    #+#             */
-/*   Updated: 2022/10/20 20:09:53 by cperron          ###   ########.fr       */
+/*   Created: 2022/11/09 18:55:30 by cperron           #+#    #+#             */
+/*   Updated: 2022/11/17 18:45:43 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <stdio.h>
 
-int	ft_toupper(int c)
-{
-	if (ft_islower(c))
-		c = c - 32;
-	return (c);
-}
+char	*get_next_line(int fd);
+char	*ft_trim(char *str, char *st);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_bzero(void *s, size_t n);
+int		ft_check_nl(char *buffer);
+int		ft_strlen(const char *str);
+#endif
