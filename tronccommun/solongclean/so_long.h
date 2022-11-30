@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:22:00 by christo           #+#    #+#             */
-/*   Updated: 2022/11/29 05:50:02 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/30 05:39:50 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct so_long
 	int		move_count;
 	int		coin_count;
 	int		div;
+	int		div4;
 	int		p_x;
 	int		p_y;
 	int		e_x;
@@ -44,7 +45,8 @@ typedef struct so_long
 	int		x_ai[20];
 	int		x_dx[20];
 	int		x_dy[20];
-	int		x_dd[20];
+	int		x_dxa[20];
+	int		x_m[20];
 	int		n_x;
 	int		x;
 	int		move_p;
@@ -57,5 +59,14 @@ int	ft_img_to_win(int i, int j, t_so_long *game);
 int	ft_enemy_ai(t_so_long *game);
 int	ft_duck(t_so_long *game);
 int	ft_img_sprite(int x, int y, char *xpm, t_so_long *game);
+int	ft_loop(t_so_long *game);
+int	ft_img_switch(int x, int y, t_so_long *game);
+int	ft_img_sprite(int x, int y, char *xpm, t_so_long *game);
+int	ft_death(t_so_long *game);
+int	ft_open_exit(t_so_long *game);
+int	ft_game_over(t_so_long *game);
+int	ft_exit_game(t_so_long *game);
+int	ft_enemy_col(int x, int y, t_so_long *game);
+int	key_hook(int keycode, t_so_long *game);
 
 #endif

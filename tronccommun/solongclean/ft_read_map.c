@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:19:46 by christo           #+#    #+#             */
-/*   Updated: 2022/11/29 06:28:11 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/30 05:20:16 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,10 @@ int	ft_img_to_map(int x, int y, t_so_long *game)
 				game->x_y[game->n_x] = y;
 				game->x_ai[game->n_x] = 1;
 				game->x_dx[game->n_x] = 1;
+				game->x_dxa[game->n_x] = 1;
 				game->x_dy[game->n_x] = 0;
-				ft_xpm_to_img("Z.XPM", game);
+				game->x_m[game->n_x] = 0;
+				ft_xpm_to_img("./Z/Z1.XPM", game);
 				game->n_x++;
 				game->x++;
 			}
@@ -65,7 +67,7 @@ int	ft_img_to_map(int x, int y, t_so_long *game)
 			{
 				game->p_x = x;
 				game->p_y = y;
-				ft_xpm_to_img("P.XPM", game);
+				ft_xpm_to_img("./H/P1.XPM", game);
 			}
 			ft_img_to_win(x, y, game);
 			y++;
