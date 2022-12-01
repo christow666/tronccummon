@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 20:21:31 by christo           #+#    #+#             */
-/*   Updated: 2022/11/30 06:55:01 by cperron          ###   ########.fr       */
+/*   Updated: 2022/11/30 23:22:08 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,28 +47,45 @@ int	ft_move(int x, int y, t_so_long *game)
 int	key_hook(int keycode, t_so_long *game)
 {
 	printf("Hello from key_hook! ---> %d\n", keycode);
+	// if (keycode == 65307)
+	// 	ft_exit_game(game);
+	// if (keycode == 32)
+	// {
+	// 	game->move_p = 1;
+	// 	ft_duck(game);
+	// }
+	// if (keycode == 114)
+	// 	game->move_p = 0;
+	// if (keycode == 100 && game->move_p == 0)
+	// 	ft_move(1, 0, game);
+	// if (keycode == 97 && game->move_p == 0)
+	// 	ft_move(-1, 0, game);
+	// if (keycode == 115 && game->move_p == 0)
+	// 	ft_move(0, 1, game);
+	// if (keycode == 119 && game->move_p == 0)
+	// 	ft_move(0, -1, game);
 	if (keycode == 53)
 		ft_exit_game(game);
-	if (keycode == 49)
+	if (keycode == 32)
 	{
 		game->move_p = 1;
 		ft_duck(game);
 	}
 	if (keycode == 15)
 		game->move_p = 0;
-	// if (keycode == 2 && game->move_p == 0)
-	// 	ft_move(1, 0, game);
-	// if (keycode == 0 && game->move_p == 0)
-	// 	ft_move(-1, 0, game);
-	// if (keycode == 1 && game->move_p == 0)
-	// 	ft_move(0, 1, game);
-	// if (keycode == 13 && game->move_p == 0)
-	// 	ft_move(0, -1, game);
 	return (0);
 }
 
 int	ft_run(int keycode, t_so_long *game)
 {
+	// if (keycode == 100 && game->move_p == 0)
+	// 	ft_move(1, 0, game);
+	// if (keycode == 97 && game->move_p == 0)
+	// 	ft_move(-1, 0, game);
+	// if (keycode == 115 && game->move_p == 0)
+	// 	ft_move(0, 1, game);
+	// if (keycode == 119 && game->move_p == 0)
+	// 	ft_move(0, -1, game);
 	if (keycode == 2 && game->move_p == 0)
 		ft_move(1, 0, game);
 	if (keycode == 0 && game->move_p == 0)
@@ -77,6 +94,8 @@ int	ft_run(int keycode, t_so_long *game)
 		ft_move(0, 1, game);
 	if (keycode == 13 && game->move_p == 0)
 		ft_move(0, -1, game);
+	
+	
 	return (0);
 }
 
@@ -91,10 +110,12 @@ int	main(void)
 	game.move_count = 0;
 	game.coin_count = 0;
 	game.n_x = 0;
+	game.c_n = 0;
+	game.delay = 500;
 	game.x = 0;
 	game.move_p = 0;
 	ft_read_map(&game);
-	mlx_hook(game.win, 2, 1L << 0, ft_run, &game);
+	mlx_hook(game.win, 2, 1L << 0, ft_run, &game); 
 	mlx_key_hook(game.win, key_hook, &game);
 	mlx_loop_hook(game.mlx, ft_loop, &game);
 	mlx_loop(game.mlx);

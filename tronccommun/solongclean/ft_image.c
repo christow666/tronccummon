@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_image.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christo <christo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 19:43:00 by christo           #+#    #+#             */
-/*   Updated: 2022/11/29 13:44:55 by christo          ###   ########.fr       */
+/*   Updated: 2022/11/30 21:47:31 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,75 @@ int	ft_img_to_win(int i, int j, t_so_long *game)
 	return (0);
 }
 
-int	ft_img_sprite(int x, int y, char *xpm, t_so_long *game)
+int	ft_img_sprite_2(int x, int y, int z, char *xpm, t_so_long *game)
 {
-	ft_xpm_to_img(xpm, game);
-	ft_img_to_win(x, y, game);
+	game->img = mlx_xpm_file_to_image(game->mlx, xpm,
+			&game->img_width, &game->img_height);
+	mlx_put_image_to_window(game->mlx, game->win, game->img,
+		game->div * x + game->div4 * z * game->x_dxa[game->n_x],
+			game->div * y);
 	return (0);
 }
 
 int	ft_img_switch(int x, int y, t_so_long *game)
 {
-	ft_img_sprite(game->p_x, game->p_y, "0.XPM", game);
+	ft_img_sprite_2(game->p_x, game->p_y, 0, "0.XPM", game);
 	game->p_x += x;
 	game->p_y += y;
-	if (game->anim_count > 0 && game->anim_count <= 10000)
-		ft_img_sprite(game->p_x, game->p_y, "./H/P1.xpm", game);
-	if (game->anim_count > 10000 && game->anim_count <= 2000)
-		ft_img_sprite(game->p_x, game->p_y, "./H/P2.xpm", game);
-	if (game->anim_count > 20000 && game->anim_count <= 30000)
-		ft_img_sprite(game->p_x, game->p_y, "./H/P3.xpm", game);
-	if (game->anim_count > 30000 && game->anim_count <= 40000)
-		ft_img_sprite(game->p_x, game->p_y, "./H/P4.xpm", game);
+	if (game->anim_count > 0 && game->anim_count <= 2 * game->delay)
+		ft_img_sprite_2(game->p_x, game->p_y, 0, "./H/P1.XPM", game);
+	if (game->anim_count > 2 * game->delay && game->anim_count <= 4 * game->delay)
+		ft_img_sprite_2(game->p_x, game->p_y, 0, "./H/P2.XPM", game);
+	if (game->anim_count > 4 * game->delay && game->anim_count <= 6 * game->delay)
+		ft_img_sprite_2(game->p_x, game->p_y, 0, "./H/P3.XPM", game);
+	if (game->anim_count > 6 * game->delay && game->anim_count <= 8 * game->delay)
+		ft_img_sprite_2(game->p_x, game->p_y, 0, "./H/P4.XPM", game);
+	return (0);
+}
+
+int	ft_check_anime_col(t_so_long *game)
+{
+	if (game->map[game->x_y[game->n_x]][game->x_x[game->n_x]
+		+ game->x_dx[game->n_x]] == 'C' && game->anim_count == 0)
+		return (1);
+	if (game->map[game->x_y[game->n_x]][game->x_x[game->n_x]
+		+ game->x_dx[game->n_x]] == '1' && game->anim_count == 0)
+		return (1);
+	if (ft_enemy_col(game->x_dxa[game->n_x], 0, game) == 1)
+		return (1);
+	return (0);
+}
+
+int	ft_animation(int z, char *P, char *Z, t_so_long *game)
+{
+	if (game->move_p == 0)
+	{
+		game->n_x = 0;
+		while (game->n_x < game->x)
+		{	
+			if (ft_check_anime_col(game) == 1)
+				game->x_dxa[game->n_x] *= -1;
+			ft_img_sprite_2(game->x_x[game->n_x] + game->x_dxa[game->n_x],
+				game->x_y[game->n_x], 0, "0.XPM", game);
+			ft_img_sprite_2(game->x_x[game->n_x], game->x_y[game->n_x], 0,
+				"0.XPM", game);
+			ft_img_sprite_2(game->x_x[game->n_x], game->x_y[game->n_x], z,
+				Z, game);
+			game->n_x++;
+		}
+		ft_img_sprite_2(game->p_x, game->p_y, 0, "0.XPM", game);
+		ft_img_sprite_2(game->p_x, game->p_y, 0, P, game);
+	}
+	return (0);
+}
+
+int	ft_death_anim(char * xpm, t_so_long *game)
+{
+	if (game->move_p < 5 && game->move_p != 0)
+		{
+			ft_img_sprite_2(game->p_x, game->p_y, 0, "0.XPM", game);
+			ft_img_sprite_2(game->p_x, game->p_y, 0, xpm, game);
+			game->move_p++;
+		}
 	return (0);
 }

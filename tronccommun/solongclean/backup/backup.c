@@ -71,3 +71,35 @@ int	duck_flash(t_so_long *game)
 		// printf("map x + 1: %c\n", game->map[game->p_x + 1][game->p_y]);
 		// printf("map x - 1: %c\n", game->map[game->p_x - 1][game->p_y]);
 		// printf("map bug: %c\n", game->map[3][1]);
+		// int	ft_enemy_move(int x, int y, int d, t_so_long *game)
+// {
+// 	// if (ft_enemy_col(x, y, game) == 1)
+// 	// 	return (1);
+// 	if (game->map[game->x_y[game->n_x] + y][game->x_x[game->n_x] + x] == '1'
+// 			|| game->map[game->x_y[game->n_x] + y][game->x_x[game->n_x] + x]
+// 				== 'E')
+// 		return (1);
+// 	if (game->map[game->x_y[game->n_x] + y][game->x_x[game->n_x] + x] == 'C'
+// 			|| game->map[game->x_y[game->n_x] + y][game->x_x[game->n_x] + x]
+// 				== 'e')
+// 		return (1);
+// 	ft_img_switch_x(x, y, game);
+// 	if (game->x_y[game->n_x] == game->p_y && game->x_x[game->n_x] == game->p_x)
+// 	{
+// 		game->move_p = 1;
+// 		ft_duck(game);
+// 	}
+// 	return (0);
+// }
+
+// int	ft_enemy_ai_1(t_so_long *game)
+// {
+// 	if (ft_enemy_move(game->x_dx[game->n_x], game->x_dy[game->n_x],
+// 			0, game) == 1)
+// 	{
+// 		game->x_dx[game->n_x] *= -1;
+// 		game->x_dy[game->n_x] = 0;
+// 		ft_enemy_move(game->x_dx[game->n_x], game->x_dy[game->n_x], 0, game);
+// 	}
+// 	return (0);
+// }

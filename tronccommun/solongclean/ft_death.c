@@ -40,8 +40,11 @@ int	ft_exit_game(t_so_long *game)
 
 int	ft_game_over(t_so_long *game)
 {
-	game->move_p = 1;
-	ft_duck(game);
+	if(game->move_p == 0)
+	{
+		game->move_p = 1;
+		ft_duck(game);
+	}
 	return (0);
 }
 

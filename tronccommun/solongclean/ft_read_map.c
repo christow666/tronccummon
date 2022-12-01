@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:19:46 by christo           #+#    #+#             */
-/*   Updated: 2022/11/30 05:20:16 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/01 00:11:41 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_img_to_map(int x, int y, t_so_long *game)
 {
-	int	n;
+	int	c;
 
-	n = 0;
+	c = 0;
 	game->win = mlx_new_window(game->mlx, game->div * 19,
 			game->div * 25, "so_long");
 	game->img = mlx_new_image(game->mlx, game->div * 10, game->div * 19);
@@ -58,7 +58,10 @@ int	ft_img_to_map(int x, int y, t_so_long *game)
 			}
 			if (game->map[y][x] == 'C')
 			{
-				ft_xpm_to_img("C.XPM", game);
+				game->c_x[game->c_n] = x;
+				game->c_y[game->c_n] = y;
+				ft_xpm_to_img("./C/C1.XPM", game);
+				game->c_n++;
 				game->coin_count++;
 			}
 			if (game->map[y][x] == '0')
@@ -75,6 +78,7 @@ int	ft_img_to_map(int x, int y, t_so_long *game)
 		y = 0;
 		x++;
 	}
+	game->c_nn = game->coin_count;
 	return (0);
 }
 

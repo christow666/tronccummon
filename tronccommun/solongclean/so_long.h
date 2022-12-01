@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:22:00 by christo           #+#    #+#             */
-/*   Updated: 2022/11/30 05:39:50 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/01 00:06:45 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct so_long
 	int		coin_count;
 	int		div;
 	int		div4;
+	int		delay;
 	int		p_x;
 	int		p_y;
 	int		e_x;
@@ -46,7 +47,11 @@ typedef struct so_long
 	int		x_dx[20];
 	int		x_dy[20];
 	int		x_dxa[20];
+	int		c_x[20];
+	int		c_y[20];
 	int		x_m[20];
+	int		c_n;
+	int		c_nn;
 	int		n_x;
 	int		x;
 	int		move_p;
@@ -68,5 +73,8 @@ int	ft_game_over(t_so_long *game);
 int	ft_exit_game(t_so_long *game);
 int	ft_enemy_col(int x, int y, t_so_long *game);
 int	key_hook(int keycode, t_so_long *game);
+int	ft_animation(int z, char *P, char *Z, t_so_long *game);
+int	ft_death_anim(char *xpm, t_so_long *game);
+int	ft_img_sprite_2(int x, int y, int z, char *xpm, t_so_long *game);
 
 #endif
