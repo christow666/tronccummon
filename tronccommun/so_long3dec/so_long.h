@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:22:00 by christo           #+#    #+#             */
-/*   Updated: 2022/12/01 00:06:45 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/06 23:33:32 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SO_LONG_H
 
 # include "./mlx/mlx.h"
-// # include "./mlx/mlx_int.h"
 # include <stdio.h>
 # include <fcntl.h>
 # include <unistd.h>
@@ -49,10 +48,18 @@ typedef struct so_long
 	int		x_dxa[20];
 	int		c_x[20];
 	int		c_y[20];
-	int		x_m[20];
+	int		n_x;
+	int		c_i[20];
 	int		c_n;
 	int		c_nn;
-	int		n_x;
+	int		b_x[20];
+	int		b_y[20];
+	int		b_n;
+	int		b_max;
+	int		o_x[20];
+	int		o_y[20];
+	int		o_n;
+	int		o_max;
 	int		x;
 	int		move_p;
 	char	map[20][20];
@@ -76,5 +83,16 @@ int	key_hook(int keycode, t_so_long *game);
 int	ft_animation(int z, char *P, char *Z, t_so_long *game);
 int	ft_death_anim(char *xpm, t_so_long *game);
 int	ft_img_sprite_2(int x, int y, int z, char *xpm, t_so_long *game);
+int	ft_rock(int x, int y, t_so_long *game);
+int	ft_coin(int x, int y, t_so_long *game);
+int	ft_ogro_kill(int x, int y, t_so_long *game);
+int	ft_ogro_eat(int x, int y, t_so_long *game);
+int	ft_img_to_map(int x, int y, t_so_long *game);
+int	ft_bat_checkmove(t_so_long *game);
+int	ft_img_sprite_4(int x, int y, char *xpm, t_so_long *game);
+int	ft_img_sprite_3(int dx, int dy, char *xpm, t_so_long *game);
+int	ft_orgro_anim(char *O, t_so_long *game);
+int	ft_bat_kill(int x, t_so_long *game);
+int	ft_coin_anim(char *xpm, t_so_long *game);
 
 #endif

@@ -12,25 +12,25 @@
 
 #include "./so_long.h"
 
-int	ft_enemy_col(int x, int y, t_so_long *game)
-{
-	int	i;
+// int	ft_enemy_col(int x, int y, t_so_long *game)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i < game->x)
-	{
-		if (game->x_x[game->n_x] + x == game->x_x[i] + x
-			&& game->x_y[game->n_x] + y == game->x_y[i]
-			&& i != game->n_x)
-			return (1);
-		if (game->x_x[game->n_x] == game->x_x[i]
-			&& game->x_y[game->n_x] + y == game->x_y[i]
-			&& i != game->n_x)
-			return (1);
-		i++;
-	}
-	return (0);
-}
+// 	i = 0;
+// 	while (i < game->x)
+// 	{
+// 		if (game->x_x[game->n_x] + x == game->x_x[i] + x
+// 			&& game->x_y[game->n_x] + y == game->x_y[i]
+// 			&& i != game->n_x)
+// 			return (1);
+// 		if (game->x_x[game->n_x] == game->x_x[i]
+// 			&& game->x_y[game->n_x] + y == game->x_y[i]
+// 			&& i != game->n_x)
+// 			return (1);
+// 		i++;
+// 	}
+// 	return (0);
+// }
 
 // int	ft_img_switch_x(int x, int y, t_so_long *game)
 // {

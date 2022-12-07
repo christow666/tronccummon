@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:24:49 by christo           #+#    #+#             */
-/*   Updated: 2022/11/30 06:09:27 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/06 22:01:37 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,12 @@ int	ft_exit_game(t_so_long *game)
 	printf("Your move ---> %d\n", game->move_count);
 	printf("coins remaining ---> %d\n", game->coin_count);
 	mlx_destroy_window(game->mlx, game->win);
-	// mlx_loop_end(game->mlx);
 	exit(0);
 }
 
 int	ft_game_over(t_so_long *game)
 {
-	if(game->move_p == 0)
+	if (game->move_p == 0)
 	{
 		game->move_p = 1;
 		ft_duck(game);
