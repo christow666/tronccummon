@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:22:00 by christo           #+#    #+#             */
-/*   Updated: 2022/12/06 23:33:32 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/07 22:34:06 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ int	ft_img_sprite_3(int dx, int dy, char *xpm, t_so_long *game);
 int	ft_orgro_anim(char *O, t_so_long *game);
 int	ft_bat_kill(int x, t_so_long *game);
 int	ft_coin_anim(char *xpm, t_so_long *game);
+int	ft_img_sprite_5(int x, int y, char *xpm, t_so_long *game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 20:21:31 by christo           #+#    #+#             */
-/*   Updated: 2022/12/06 22:06:17 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/07 21:40:05 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_pamam_init(t_so_long *game)
 	game->c_n = 0;
 	game->b_n = 0;
 	game->b_max = 0;
-	game->delay = 500;
+	game->delay = 300;
 	game->x = 0;
 	game->move_p = 0;
 	return (0);

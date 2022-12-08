@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:24:49 by christo           #+#    #+#             */
-/*   Updated: 2022/12/06 22:01:37 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/07 21:42:35 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_duck(t_so_long *game)
 {
-	game->img = mlx_new_image(game->mlx, 1000, 1000);
+	// game->img = mlx_new_image(game->mlx, 1000, 1000);
 	game->img = mlx_xpm_file_to_image(game->mlx, "d.XPM", &game->img_width,
 			&game->img_height);
 	mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
@@ -23,8 +23,9 @@ int	ft_duck(t_so_long *game)
 
 int	ft_open_exit(t_so_long *game)
 {
-	ft_xpm_to_img("EO.XPM", game);
-	ft_img_to_win(game->e_x, game->e_y, game);
+	// ft_xpm_to_img("EO.XPM", game);
+	// ft_img_to_win(game->e_x, game->e_y, game);
+	ft_img_sprite_4(game->e_x, game->e_y, "EO.XPM", game);
 	game->map[game->e_y][game->e_x] = 'e';
 	return (0);
 }

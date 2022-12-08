@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:19:46 by christo           #+#    #+#             */
-/*   Updated: 2022/12/06 22:18:49 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/07 23:20:08 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	ft_map_init(t_so_long *game)
 	y = 0;
 	ft_print_map(x, y, game);
 	ft_img_to_map(x, y, game);
-	ft_xpm_to_img("0.XPM", game);
 	return (0);
 }
 

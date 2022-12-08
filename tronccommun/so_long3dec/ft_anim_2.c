@@ -6,7 +6,7 @@
 /*   By: cperron <cperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 23:31:22 by cperron           #+#    #+#             */
-/*   Updated: 2022/12/06 23:31:36 by cperron          ###   ########.fr       */
+/*   Updated: 2022/12/08 00:02:11 by cperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_coin_anim(char *xpm, t_so_long *game)
 		{
 			ft_img_sprite_3(0, 0, "0.XPM", game);
 			ft_img_sprite_3(1, 1, xpm, game);
+			// ft_img_sprite_5(0, 0, xpm, game);
 		}
 		ft_coin_anim_2(xpm, game);
 		if (game->c_i[game->c_n] == 8)
@@ -81,7 +82,7 @@ int	ft_orgro_anim(char *O, t_so_long *game)
 	i = 0;
 	while (i < game->o_n)
 	{
-		ft_img_sprite_2(game->o_x[i], game->o_y[i], 0, O, game);
+		ft_img_sprite_5(game->o_x[i], game->o_y[i], O, game);
 		i++;
 	}
 	return (0);
